@@ -1,16 +1,39 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: Scaffold(
+      backgroundColor: Colors.red,
+      appBar: AppBar(
+        title: Text('Dicee'),
+        backgroundColor: Colors.red,
+      ),
+      body: DicePage(),
+    ),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Text('Hello World'),
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('assets/dice1.png'),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Image.asset('assets/dice1.png'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
